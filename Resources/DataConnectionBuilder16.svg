@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16">
+  <!-- database -->
+  <rect x="2" y="2" width="12" height="12" fill="aqua" />
+  <ellipse cx="8" cy="2" rx="6" ry="1" stroke="teal" fill="aqua" />
+  <path d="M 2 6 A 6 1 0 0 0 14 6" stroke="teal" fill="aqua" />
+  <path d="M 2 10 A 6 1 0 0 0 14 10" stroke="teal" fill="aqua" />
+  <path d="M 2 14 A 6 1 0 0 0 14 14" stroke="teal" fill="aqua" />
+  <line x1="2" y1="2" x2="2" y2="14" stroke="teal" />
+  <line x1="14" y1="2" x2="14" y2="14" stroke="teal" />
+  <!-- connection string -->
+  <rect x="1" y="9" width="8" height="6" stroke="black" fill="white" />
+  <line x1="3" y1="12" x2="7" y2="12" stroke="black" />
+</svg>
