@@ -4,28 +4,25 @@
     <meta charset="UTF-8" />
     <title>Data Connection Builder Help</title>
     <meta name="author" content="Jeff Bourdier" />
+    <style>
+      table { margin: auto; border-collapse: collapse; }
+      table, th, td { border: 1px solid black; padding: 4px; }
+      th { background-color: silver; }
+    </style>
   </head>
   <body>
     <h2 style="text-align:center;">Data Connection Builder Help</h2>
     <hr />
     <p>
       <h3>What is Data Connection Builder?</h3>
-      Data Connection Builder is used to build connection strings for use with <a target="_blank" href="https://docs.microsoft.com/en-us/sql/ado/microsoft-activex-data-objects-ado">ActiveX Data Objects (ADO)</a>, Microsoft's data access technology.  An ADO connection string contains the information needed to establish a connection to a data source (such as a database).  This information typically includes, at minimum, the name of the data source and the provider.  Data Connection Builder currently supports three providers: SQL Server, Oracle, and ACE (used with Access and Excel).  A connection string might also include security information, such as user ID and password.  For more information on connection strings, see the following resources:
-      <ul>
-        <li>
-          <a target="_blank" href="https://docs.microsoft.com/en-us/sql/ado/reference/ado-api/connectionstring-property-ado">ConnectionString Property</a> (Microsoft ADO Programmer's Reference)
-        </li>
-        <li>
-          <a target="_blank" href="https://docs.microsoft.com/en-us/dotnet/framework/data/adonet/connection-string-syntax">Connection String Syntax</a> (Microsoft .NET Framework Development Guide)
-        </li>
-        <li>
-          <a target="_blank" href="http://www.connectionstrings.com/">ConnectionStrings.com</a>
-        </li>
-      </ul>
+      Data Connection Builder is used to build connection strings for use with Microsoft's <a target="_blank" href="https://docs.microsoft.com/en-us/dotnet/framework/data/adonet/data-providers#net-framework-data-provider-for-ole-db">ActiveX Data Objects .NET (ADO.NET) Framework Data Provider for Object Linking and Embedding, Database (OLE DB)</a> technology.  Such a connection string contains the information needed to establish a connection to an OLE DB data source through ADO.NET.  This information typically includes, at minimum, the name of the data source and the provider.
+    </p>
+    <p>
+      Data Connection Builder supports the three Microsoft OLE DB providers that have been tested with ADO.NET: SQL Server, Oracle, and ACE (used with Access and Excel).  A connection string might also include security information, such as user ID and password.  For more information, see <a target="_blank" href="https://docs.microsoft.com/en-us/dotnet/framework/data/adonet/connection-string-syntax#oledb-connection-strings">Connection String Syntax (OleDb Connection Strings)</a>.  <a target="_blank" href="http://www.connectionstrings.com/">ConnectionStrings.com</a> also provides information on connection strings for many additional OLE DB providers.
     </p>
     <br />
     <p>
-      <h3>To build a new data connection</h3>
+      <h3>Building a new connection string</h3>
       <ol>
         <li>
           Specify a <b>Pro<u>v</u>ider</b> and a <b><u>D</u>ata Source</b>.  These properties are always required.
@@ -34,11 +31,60 @@
           Specify other properties as appropriate.  Certain properties may be required depending on the provider.  Properties that do not apply to the specified provider are hidden.
         </li>
         <li>
-          It is always a good idea to make sure that the connection is valid before saving.  Test the connection by clicking the <b><u>T</u>est Connection</b> button.
+          It is always a good idea to make sure that the connection string is valid once it is built.  Test the connection string by clicking the <b><u>T</u>est Connection</b> button.
         </li>
       </ol>
     </p>
+    <br />
+    <p>
+      <h3>Troubleshooting</h3>
+      <p>If a data provider is not installed, an error will occur when the connection is tested.  Below are the errors that typically occur and links for downloading each data provider.</p>
+      <table>
+        <tr>
+          <th>Provider</th>
+          <th>Error</th>
+          <th>Link(s)</th>
+        </tr>
+        <tr>
+          <td style="text-align:center;">ACE (Access/Excel)</td>
+          <td>The 'Microsoft.ACE.OLEDB.12.0' provider is not registered on the local machine.</td>
+          <td>
+            <ul>
+              <li>
+                <a target="_blank" href="http://www.microsoft.com/en-us/download/confirmation.aspx?id=23734">2007 Office System Driver: Data Connectivity Components</a>
+              </li>
+              <li>
+                <a target="_blank" href="http://www.microsoft.com/download/en/details.aspx?id=13255">Microsoft Access Database Engine 2010 Redistributable</a>
+              </li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td style="text-align:center;">Oracle</td>
+          <td>The 'MSDAORA.1' provider is not registered on the local machine.</td>
+          <td>
+            <ul>
+              <li>
+                <a target="_blank" href="http://www.oracle.com/technetwork/database/features/instant-client/index-097480.html">Oracle Instant Client</a>
+              </li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td style="text-align:center;">SQL Server</td>
+          <td>[DBNETLIB][ConnectionOpen (Connect()).]SQL Server does not exist or access denied.</td>
+          <td>
+            <ul>
+              <li>
+                <a target="_blank" href="https://www.microsoft.com/en-us/download/details.aspx?id=50402">SQL Server Native Client</a>
+              </li>
+            </ul>
+          </td>
+        </tr>
+      </table>
+      <br />
+    </p>
     <hr />
-    <p style="text-align:center;">&copy; 2017 Jeffrey Paul Bourdier</p>
+    <p style="text-align:center;">&copy; 2017-8 Jeffrey Paul Bourdier</p>
   </body>
 </html>
